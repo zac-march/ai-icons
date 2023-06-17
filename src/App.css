@@ -3,3 +3,13 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
+.App > main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.App > main > section {
+  padding: 1rem;
+}
