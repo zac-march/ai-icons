@@ -10,9 +10,9 @@ const Link: FC<LinkProps> = (props) => {
   const { title, callback } = props;
 
   return (
-    <a onClick={callback} className={style.link}>
+    <button onClick={callback} className={style.link}>
       {title}
-    </a>
+    </button>
   );
 };
 
