@@ -6,14 +6,14 @@ interface LinkProps {
   callback: any;
 }
 
-const Link: FC<LinkProps> = (props) => {
+const LinkBtn: FC<LinkProps> = (props) => {
   const { title, callback } = props;
 
   return (
-    <button onClick={callback} className={style.link}>
+    <a href={"./generate"} onClick={callback} className={style.link}>
       {title}
-    </button>
+    </a>
   );
 };
 
-export default Link;
+export default LinkBtn;
