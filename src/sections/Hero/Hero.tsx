@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Hero.module.css";
-import Link from "../../components/Link/Link";
+import LinkBtn from "../../components/Link/LinkBtn";
 
 function Hero() {
   return (
@@ -11,7 +11,10 @@ function Hero() {
         AI-powered icon generator. Save time with a single click and enjoy
         stunning results.
       </p>
-      <Link title={"Get Started"} callback={() => console.log("load page")} />
+      <LinkBtn
+        title={"Get Started"}
+        callback={() => console.log("load page")}
+      />
     </section>
   );
 }
