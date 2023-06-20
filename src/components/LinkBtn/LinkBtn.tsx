@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import style from "./Link.module.css";
+import style from "./LinkBtn.module.css";
 
 interface LinkProps {
   title: string;

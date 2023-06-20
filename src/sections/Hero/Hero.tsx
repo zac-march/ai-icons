@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Hero.module.css";
-import LinkBtn from "../../components/Link/LinkBtn";
+import LinkBtn from "../../components/LinkBtn/LinkBtn";
 
 function Hero() {
   return (
