@@ -4,33 +4,34 @@ import { useForm } from "react-hook-form";
 import getIcons from "../../api/getIcons";
 import GenerateForm from "../../components/GenerateForm/GenerateForm";
 import uniqid from "uniqid";
+import { JsxElement } from "typescript";
 
 interface Icons {
   timeCreated: number;
   url: string;
 }
 
-const placeholderIcon = (
-  <div className={`${style.icon} ${style.skele}`} key={uniqid()}></div>
-);
-
 const Generate: FC = () => {
+  const [iconsToLoad, setIconsToLoad] = useState<number>(0);
   const [generatedIcons, setGeneratedIcons] = useState<Icons[]>([]);
-  const [placeholderIcons, setSkeleIcons] = useState<JSX.Element[]>([]);
+  const [skeletonIcons, setSkeletonIcons] = useState<JSX.Element[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const form = useForm();
   const { register } = form;
 
   useEffect(() => {
-    if (!isLoading) setSkeleIcons([]);
+    if (!isLoading) {
+      setSkeletonIcons([]);
+    }
   }, [isLoading]);
 
   const handleGenerate = async (e: any) => {
     e.preventDefault();
-    console.log(e);
+    const count = form.getValues().variants;
+    setIconsToLoad(count);
     setIsLoading(true);
-    setSkeleIcons([placeholderIcon]);
+    getSkeletonIcons(count);
     setGeneratedIcons([]);
 
     try {
@@ -42,18 +43,32 @@ const Generate: FC = () => {
     }
   };
 
-  function endIconLoad() {
-    setIsLoading(false);
-    // alert("image rendered");
-  }
-
-  function startIconLoad() {
-    //Rendering start
-    requestAnimationFrame(endIconLoad);
+  function getSkeletonIcons(count: number) {
+    let tempArray: JSX.Element[] = [];
+    for (let i = 0; i < count; i++) {
+      tempArray.push(
+        <div className={`${style.icon} ${style.skeleton}`} key={uniqid()}></div>
+      );
+    }
+    console.log(tempArray);
+    setSkeletonIcons(tempArray);
   }
 
   function iconLoad() {
     requestAnimationFrame(startIconLoad);
+
+    function startIconLoad() {
+      requestAnimationFrame(endIconLoad);
+    }
+
+    function endIconLoad() {
+      console.log("icon loaded", iconsToLoad);
+      if (iconsToLoad <= 1) {
+        setIsLoading(false);
+      } else {
+        setIconsToLoad((prev) => prev - 1);
+      }
+    }
   }
 
   return (
@@ -64,7 +79,7 @@ const Generate: FC = () => {
         isLoading={isLoading}
       />
       <div className={style.icons}>
-        {isLoading && placeholderIcons.map((skele) => skele)}
+        {isLoading && skeletonIcons.map((skele) => skele)}
         {generatedIcons.map((icon, index) => (
           <div className={style.icon} key={index}>
             <img
