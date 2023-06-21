@@ -1,10 +1,9 @@
 import React, { FC, useEffect, useState } from "react";
 import style from "./Generate.module.css";
 import { useForm } from "react-hook-form";
-import getIcons from "../../api/getIcons";
+import fetchIcons from "../../api/fetchIcons";
 import GenerateForm from "../../components/GenerateForm/GenerateForm";
 import uniqid from "uniqid";
-import { JsxElement } from "typescript";
 
 interface Icons {
   timeCreated: number;
@@ -35,7 +34,7 @@ const Generate: FC = () => {
     setGeneratedIcons([]);
 
     try {
-      const icons: Icons[] = await getIcons(form.getValues());
+      const icons: Icons[] = await fetchIcons(form.getValues());
       setGeneratedIcons(icons);
     } catch (error) {
       console.error("Error generating icons:", error);
