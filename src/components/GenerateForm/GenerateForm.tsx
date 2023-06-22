@@ -53,7 +53,7 @@ const GenerateForm: FC<Props> = (props) => {
               <input
                 value={color.value}
                 style={{ backgroundColor: `${color.display}` }}
-                className={style.radioInput}
+                className={style.radioColor}
                 type="radio"
                 id={"color-" + color.value}
                 {...register("color")}
@@ -68,7 +68,7 @@ const GenerateForm: FC<Props> = (props) => {
         <div className={style.designs}>
           {designOptions.map((design, index) => (
             <div className={style.design} key={index}>
-              <div className={style.radioWrap}>
+              <div className={style.designWrap}>
                 <input
                   name="design"
                   type="radio"
@@ -100,7 +100,7 @@ const GenerateForm: FC<Props> = (props) => {
         </div>
       </div>
       <div className={style.formControl}>
-        <button type="submit" disabled={isLoading}>
+        <button type="submit" disabled={isLoading} className={style.submitBtn}>
           {!isLoading ? "Generate" : <div className={style.loader}></div>}
         </button>
       </div>
