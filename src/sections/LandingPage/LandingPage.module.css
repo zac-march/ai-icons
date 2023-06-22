@@ -5,5 +5,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
+}
+
+.container > p {
+  margin-bottom: 1rem;
+}
+
+.container > a {
+  align-self: center;
 }
