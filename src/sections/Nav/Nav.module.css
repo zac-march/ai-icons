@@ -16,5 +16,14 @@
 
 .navItems a {
   color: var(--accent-color);
+}
+
+.container a {
+  display: block;
   font-weight: bold;
+  transition: all 0.01s ease-in-out;
+}
+
+.container a:active {
+  transform: scale(0.95);
 }
