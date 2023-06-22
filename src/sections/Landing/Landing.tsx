@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./LandingPage.module.css";
+import style from "./Landing.module.css";
 import LinkBtn from "../../components/LinkBtn/LinkBtn";
 
-function LandingPage() {
+function Landing() {
   return (
     <section className={style.container}>
       <h1>Create a unique, professional icon for your application</h1>
@@ -15,4 +15,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default Landing;
