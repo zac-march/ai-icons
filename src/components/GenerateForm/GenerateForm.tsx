@@ -22,7 +22,12 @@ const GenerateForm: FC<Props> = (props) => {
   const { register, handleGenerate, isLoading } = props;
 
   return (
-    <form className={style.container}>
+    <form
+      className={style.container}
+      id="generateForm"
+      name="generateForm"
+      onSubmit={(e) => handleGenerate(e)}
+    >
       <div className={style.formControl}>
         <label className={style.label} htmlFor="description">
           1. Describe your icon
@@ -69,7 +74,7 @@ const GenerateForm: FC<Props> = (props) => {
                   type="radio"
                   id={"design-" + design.name}
                   value={design.name}
-                  className={style.hidden}
+                  className={style.radioDesign}
                   {...register("design")}
                   required
                 />
@@ -95,14 +100,8 @@ const GenerateForm: FC<Props> = (props) => {
         </div>
       </div>
       <div className={style.formControl}>
-        <button onClick={(e) => handleGenerate(e)} disabled={isLoading}>
-          {!isLoading ? (
-            "Generate"
-          ) : (
-            <div className={style.loader}>
-              {"Generating..."} <div className={style.spinner}>{"0"}</div>
-            </div>
-          )}
+        <button type="submit" disabled={isLoading}>
+          {!isLoading ? "Generate" : <div className={style.loader}></div>}
         </button>
       </div>
     </form>
