@@ -3,14 +3,14 @@ import style from "./LinkBtn.module.css";
 
 interface LinkProps {
   title: string;
-  callback: any;
+  route: string;
 }
 
 const LinkBtn: FC<LinkProps> = (props) => {
-  const { title, callback } = props;
+  const { title, route } = props;
 
   return (
-    <a href={"./generate"} onClick={callback} className={style.link}>
+    <a href={route} className={style.link}>
       {title}
     </a>
   );
