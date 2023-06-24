@@ -1,5 +1,4 @@
-import React from "react";
-import style from "./Nav.module.css";
+import style from "./Header.module.css";
 
 function Nav() {
   return (

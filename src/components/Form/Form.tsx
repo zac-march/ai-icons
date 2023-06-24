@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import style from "./GenerateForm.module.css";
+import style from "./Form.module.css";
 import designOptions from "../../data/iconDesigns";
 import uniqid from "uniqid";
 
@@ -18,7 +18,7 @@ const colorOptions = [
   { display: "mediumpurple", value: "purple" },
 ];
 
-const GenerateForm: FC<Props> = (props) => {
+const Form: FC<Props> = (props) => {
   const { register, handleGenerate, isLoading } = props;
 
   return (
@@ -108,4 +108,4 @@ const GenerateForm: FC<Props> = (props) => {
   );
 };
 
-export default GenerateForm;
+export default Form;

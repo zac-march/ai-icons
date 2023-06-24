@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import Nav from "./sections/Nav/Nav";
+import Nav from "./sections/Header/Header";
 import Landing from "./sections/Landing/Landing";
 import Generate from "./sections/Generate/Generate";
 

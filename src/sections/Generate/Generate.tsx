@@ -1,8 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import style from "./Generate.module.css";
 import { useForm } from "react-hook-form";
 import fetchIcons from "../../api/fetchIcons";
-import GenerateForm from "../../components/GenerateForm/GenerateForm";
+import Form from "../../components/Form/Form";
 import uniqid from "uniqid";
 
 interface Icons {
@@ -36,10 +36,16 @@ const Generate: FC = () => {
     try {
       const icons: Icons[] = await fetchIcons(form.getValues());
       setGeneratedIcons(icons);
+      // localStorage.setItem("icons", JSON.stringify([]));
+      let storedIcons = JSON.parse(localStorage.getItem("icons"));
+      icons.forEach((icon) => storedIcons.push(icon));
+      localStorage.setItem("icons", JSON.stringify(storedIcons));
     } catch (error) {
       console.error("Error generating icons:", error);
       setIsLoading(false);
     }
+
+    console.log(JSON.parse(localStorage.getItem("icons")));
   };
 
   function getSkeletonIcons(count: number) {
@@ -72,7 +78,7 @@ const Generate: FC = () => {
 
   return (
     <section className={style.container}>
-      <GenerateForm
+      <Form
         register={register}
         handleGenerate={handleGenerate}
         isLoading={isLoading}
