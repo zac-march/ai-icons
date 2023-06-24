@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Nav from "./sections/Nav/Nav";
-import Hero from "./sections/Hero/Hero";
+import Landing from "./sections/Landing/Landing";
 import Generate from "./sections/Generate/Generate";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Nav />
         <main>
           <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/generate" element={<Generate />} />
           </Routes>
         </main>
