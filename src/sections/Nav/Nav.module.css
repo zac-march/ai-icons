@@ -1,29 +1,111 @@
 @import "../../index.css";
 
 .container {
-  padding: 1.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: rgba(46, 46, 46, 0.501);
+  backdrop-filter: blur(32px);
+  border-bottom: 1px rgba(221, 214, 254, 0.1) solid;
+  flex: 0 0 100%;
+  z-index: 2;
 }
 
-.navItems {
+.logo {
+  font-size: 1.5rem;
+}
+
+#menuToggle,
+.menuBtn {
+  display: none;
+}
+
+.nav,
+.nav ul {
   display: flex;
-  gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 2rem;
+  align-items: center;
 }
 
-.navItems a {
-  color: var(--accent-color);
+.nav ul {
+  font-size: 1rem;
 }
 
-.container a {
+.menuBtn > span {
   display: block;
-  font-weight: bold;
-  transition: all 0.01s ease-in-out;
+  width: 24px;
+  height: 3px;
+  margin-bottom: 4px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
 }
 
-.container a:active {
-  transform: scale(0.95);
+#menuToggle:checked ~ .menuBtn > span {
+  background-color: var(--accent-color);
+}
+
+#menuToggle:checked ~ .menuBtn > span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menuToggle:checked ~ .menuBtn > span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuToggle:checked ~ .menuBtn > span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    justify-content: space-between;
+  }
+
+  .menuBtn {
+    display: block;
+    cursor: pointer;
+    z-index: 4;
+  }
+
+  .nav ul {
+    position: fixed;
+    top: 0px;
+    right: 5px;
+    width: 80%;
+    height: max-content;
+    padding: 1rem;
+    margin-top: var(--header-height);
+    visibility: hidden;
+    flex-direction: column;
+    align-items: start;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    border: 1px rgba(221, 214, 254, 0) solid;
+    border-radius: 10px;
+  }
+
+  #menuToggle:checked ~ ul {
+    top: 5px;
+    display: flex;
+    visibility: visible;
+    background-color: var(--bg-color);
+    color: rgb(255, 255, 255);
+    border: 1px rgba(221, 214, 254, 0.1) solid;
+  }
+
+  #menuToggle:checked ~ ul a {
+    color: rgb(255, 255, 255);
+  }
+
+  .nav ul a {
+    color: rgba(255, 255, 255, 0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
