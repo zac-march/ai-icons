@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import style from "./IconGrid.module.css";
 import uniqid from "uniqid";
 import { removeStoredIcon } from "../../util/storedIcons";
