@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Nav from "./sections/Header/Header";
@@ -8,18 +8,16 @@ import Icons from "./sections/Icons/Icons";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Nav />
-        <main>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/generate" element={<Generate />} />
-            <Route path="/icons" element={<Icons />} />
-          </Routes>
-        </main>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Nav />
+      <main>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/generate" element={<Generate />} />
+          <Route path="/icons" element={<Icons />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 

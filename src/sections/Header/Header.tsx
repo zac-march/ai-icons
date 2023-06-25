@@ -5,7 +5,7 @@ function Nav() {
     <header className={style.container}>
       <nav className={style.nav}>
         <label className={style.logo}>
-          <a href="./">AIcons</a>
+          <a href="#/">AIcons</a>
         </label>
         <input type="checkbox" id={style["menuToggle"]} />
         <label htmlFor={style["menuToggle"]} className={style.menuBtn}>
@@ -15,13 +15,13 @@ function Nav() {
         </label>
         <ul>
           <li>
-            <a href="./generate">Generate</a>
+            <a href="#/generate">Generate</a>
           </li>
           <li>
-            <a href="./icons">Icons</a>
+            <a href="#/icons">Icons</a>
           </li>
           <li>
-            <a href="./">Sign In</a>
+            <a href="#/">Sign In</a>
           </li>
         </ul>
       </nav>
