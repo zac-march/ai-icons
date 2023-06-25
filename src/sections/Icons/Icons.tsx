@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import style from "./Icons.module.css";
 import IconGrid from "../../components/IconGrid/IconGrid";
+import { getStoredIcons } from "../../util/storedIcons";
 
 interface TypeProps {}
 
@@ -11,13 +12,11 @@ interface Icon {
 
 const Icons: FC<TypeProps> = (props) => {
   const [icons, setIcons] = useState<Icon[]>();
-  const [count, setCount] = useState<number>();
 
   useEffect(() => {
-    const tempIcons = JSON.parse(localStorage.getItem("icons"));
+    const tempIcons = getStoredIcons();
     if (Array.isArray(tempIcons)) {
       setIcons(tempIcons);
-      setCount(tempIcons.length);
     }
   }, []);
 
@@ -30,7 +29,7 @@ const Icons: FC<TypeProps> = (props) => {
           before they vanish!
         </p>
       </div>
-      {icons && count && <IconGrid icons={icons} count={count} />}
+      <IconGrid icons={icons} />
     </section>
   );
 };

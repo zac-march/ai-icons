@@ -1,9 +1,8 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import style from "./Generate.module.css";
 import { useForm } from "react-hook-form";
 import fetchIcons from "../../api/fetchIcons";
 import Form from "../../components/Form/Form";
-import uniqid from "uniqid";
 import IconGrid from "../../components/IconGrid/IconGrid";
 import { addStoredIcons } from "../../util/storedIcons";
 
@@ -13,7 +12,6 @@ interface Icons {
 }
 
 const Generate: FC = () => {
-  const [iconsToLoad, setIconsToLoad] = useState<number>();
   const [generatedIcons, setGeneratedIcons] = useState<Icons[]>([]);
   const [isFetching, setIsFetching] = useState<boolean>(false);
 
@@ -22,8 +20,6 @@ const Generate: FC = () => {
 
   const handleGenerate = async (e: any) => {
     e.preventDefault();
-    const count = form.getValues().variants;
-    setIconsToLoad(count);
     setIsFetching(true);
     setGeneratedIcons([]);
 
@@ -44,7 +40,7 @@ const Generate: FC = () => {
         handleGenerate={handleGenerate}
         isLoading={isFetching}
       />
-      {<IconGrid icons={generatedIcons} count={iconsToLoad} />}
+      <IconGrid icons={generatedIcons} />
     </section>
   );
 };

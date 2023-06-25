@@ -10,7 +10,6 @@ interface Icons {
 
 interface TypeProps {
   icons: Icons[];
-  count: number;
 }
 
 const IconGrid: FC<TypeProps> = (props) => {
