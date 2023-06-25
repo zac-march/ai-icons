@@ -1,15 +1,21 @@
 function getStoredIcons() {
-  return JSON.parse(localStorage.getItem("icons"));
+  let storedIcons = JSON.parse(sessionStorage.getItem("icons"));
+  if (Array.isArray(storedIcons)) return storedIcons;
+  else return [];
 }
 
 function setStoredIcons(icons) {
-  localStorage.setItem("icons", JSON.stringify(icons));
+  sessionStorage.setItem("icons", JSON.stringify(icons));
 }
 
 function addStoredIcons(icons) {
   let storedIcons = getStoredIcons();
-  storedIcons = storedIcons.concat(icons);
-  setStoredIcons(storedIcons);
+  if (Array.isArray(storedIcons)) {
+    storedIcons = storedIcons.concat(icons);
+    setStoredIcons(storedIcons);
+  } else {
+    setStoredIcons(icons);
+  }
 }
 
 function removeStoredIcon(deadIcon) {
