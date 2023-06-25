@@ -21,7 +21,7 @@
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
 }
 
 #menuToggle,
@@ -39,7 +39,7 @@
 }
 
 .nav ul {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .menuBtn > span {
@@ -71,6 +71,9 @@
   .nav {
     justify-content: space-between;
   }
+  .logo {
+    font-size: 1.7rem;
+  }
 
   .menuBtn {
     display: block;
@@ -93,6 +96,7 @@
     z-index: 1;
     border: 1px rgba(221, 214, 254, 0) solid;
     border-radius: 10px;
+    font-size: 1.25rem;
   }
 
   #menuToggle:checked ~ ul {
