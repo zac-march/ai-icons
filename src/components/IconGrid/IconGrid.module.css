@@ -1,8 +1,11 @@
 @import "../../index.css";
 .container {
+  flex: 0.75;
+  height: max-content;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
+  min-height: 150px;
 }
 
 .icon .loaded {

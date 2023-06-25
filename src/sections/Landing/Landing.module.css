@@ -8,10 +8,30 @@
   gap: 1.2rem;
 }
 
+.container h1 {
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
 .container > p {
+  font-size: 1.25rem;
+  line-height: 2rem;
   margin-bottom: 1rem;
 }
 
 .container > a {
   align-self: center;
+}
+
+@media only screen and (min-width: 800px) {
+  .container h1 {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  .container > p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
 }

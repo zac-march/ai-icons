@@ -5,7 +5,7 @@
   --scaleDown: scale(0.98);
   --scaleUp: scale(1.02);
   --quickTransition: all 0.1s ease-in-out;
-  --header-height: 6rem;
+  --header-height: 5rem;
 }
 
 body {

@@ -36,17 +36,18 @@ const IconGrid: FC<TypeProps> = (props) => {
 
   return (
     <div className={style.container}>
-      {icons.map((icon, index) => (
-        <div className={style.icon} key={index} data-icon={index}>
-          <img
-            src={icon.url}
-            alt={`Icon ${index}`}
-            onLoad={(e: any) => iconLoad(e.target)}
-            onError={() => hideDeadIcon(index, icon)}
-          />
-          <div className={style.skeleton} key={uniqid()}></div>
-        </div>
-      ))}
+      {icons &&
+        icons.map((icon, index) => (
+          <div className={style.icon} key={index} data-icon={index}>
+            <img
+              src={icon.url}
+              alt={`Icon ${index}`}
+              onLoad={(e: any) => iconLoad(e.target)}
+              onError={() => hideDeadIcon(index, icon)}
+            />
+            <div className={style.skeleton} key={uniqid()}></div>
+          </div>
+        ))}
     </div>
   );
 };

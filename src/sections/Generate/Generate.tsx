@@ -13,7 +13,7 @@ interface Icons {
 }
 
 const Generate: FC = () => {
-  const [iconsToLoad, setIconsToLoad] = useState<number>(0);
+  const [iconsToLoad, setIconsToLoad] = useState<number>();
   const [generatedIcons, setGeneratedIcons] = useState<Icons[]>([]);
   const [isFetching, setIsFetching] = useState<boolean>(false);
 
@@ -44,7 +44,7 @@ const Generate: FC = () => {
         handleGenerate={handleGenerate}
         isLoading={isFetching}
       />
-      {iconsToLoad && <IconGrid icons={generatedIcons} count={iconsToLoad} />}
+      {<IconGrid icons={generatedIcons} count={iconsToLoad} />}
     </section>
   );
 };
