@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zac-march/aicons/static/css/main.2fbd3a7a.css",
-    "main.js": "/zac-march/aicons/static/js/main.064ac436.js",
+    "main.js": "/zac-march/aicons/static/js/main.d5a79fa2.js",
     "static/js/787.dc5a898c.chunk.js": "/zac-march/aicons/static/js/787.dc5a898c.chunk.js",
     "static/media/icon15.png": "/zac-march/aicons/static/media/icon15.daa114e2bf4ff63aafd6.png",
     "static/media/rocket-doodle.png": "/zac-march/aicons/static/media/rocket-doodle.6c972e1fa5fc042849cf.png",
@@ -39,11 +39,11 @@
     "static/media/icon9.png": "/zac-march/aicons/static/media/icon9.a37b1a55647181eceb4d.png",
     "index.html": "/zac-march/aicons/index.html",
     "main.2fbd3a7a.css.map": "/zac-march/aicons/static/css/main.2fbd3a7a.css.map",
-    "main.064ac436.js.map": "/zac-march/aicons/static/js/main.064ac436.js.map",
+    "main.d5a79fa2.js.map": "/zac-march/aicons/static/js/main.d5a79fa2.js.map",
     "787.dc5a898c.chunk.js.map": "/zac-march/aicons/static/js/787.dc5a898c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2fbd3a7a.css",
-    "static/js/main.064ac436.js"
+    "static/js/main.d5a79fa2.js"
   ]
 }
