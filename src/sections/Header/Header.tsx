@@ -18,7 +18,7 @@ function Nav() {
             <a href="./generate">Generate</a>
           </li>
           <li>
-            <a href="#">Icons</a>
+            <a href="./icons">Icons</a>
           </li>
           <li>
             <a href="#">Sign In</a>
