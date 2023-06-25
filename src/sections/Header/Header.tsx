@@ -21,7 +21,7 @@ function Nav() {
             <a href="#/icons">Icons</a>
           </li>
           <li>
-            <a href="#/">Sign In</a>
+            <a className={style.disabledLink}>Sign In</a>
           </li>
         </ul>
       </nav>
