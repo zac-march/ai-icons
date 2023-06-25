@@ -28,6 +28,22 @@ const Form: FC<Props> = (props) => {
       name="generateForm"
       onSubmit={(e) => handleGenerate(e)}
     >
+      <div className={style.instructions}>
+        <h1>Let's Create Your Icon</h1>
+        <p>
+          Please note that results may vary. To improve the quality of your
+          icons, consider the following suggestions:
+        </p>
+        <ul>
+          <li>Keep it simple: Simple prompts work best</li>
+          <li>Avoid letters: The AI struggles with letter icons</li>
+          <li>Try variants: Experiment with different icon variations</li>
+          <li>
+            Add descriptive words: Enhance your icons with words like "happy" or
+            "vibrant."
+          </li>
+        </ul>
+      </div>
       <div className={style.formControl}>
         <label className={style.label} htmlFor="description">
           1. Describe your icon
@@ -36,7 +52,7 @@ const Form: FC<Props> = (props) => {
           className={style.textInput}
           type="text"
           id="description"
-          placeholder="a silly goose"
+          placeholder="a rocketship blasting through space"
           {...register("description")}
           required
         ></input>

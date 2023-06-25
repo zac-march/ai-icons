@@ -1,1 +1,15 @@
 @import "../../index.css";
+
+.container,
+.blurb {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  gap: 2rem;
+}
+
+.blurb {
+  gap: 0.5rem;
+}

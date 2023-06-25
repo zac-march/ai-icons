@@ -22,6 +22,17 @@
 .container > a {
   align-self: center;
 }
+.iconGallery {
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 5px;
+}
+
+.iconGallery img {
+  max-width: 100%;
+}
 
 @media only screen and (min-width: 800px) {
   .container h1 {
@@ -33,5 +44,9 @@
     font-size: 1.5rem;
     line-height: 2rem;
     margin-bottom: 1rem;
+  }
+
+  .iconGallery {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }

@@ -23,6 +23,13 @@ const Icons: FC<TypeProps> = (props) => {
 
   return (
     <section className={style.container}>
+      <div className={style.blurb}>
+        <h1>Your icons</h1>
+        <p>
+          Icons are hosted for only 15 minutes, so download your favorites
+          before they vanish!
+        </p>
+      </div>
       {icons && count && <IconGrid icons={icons} count={count} />}
     </section>
   );
